@@ -1,0 +1,9 @@
+---
+version: "3"
+
+services:
+
+  github-top-contributors-app:
+    build: .
+    ports:
+      - 8080:8080

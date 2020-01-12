@@ -1,0 +1,12 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 530e530b1ebd1806e17b                          # Move this to an environment variable
+            client-secret: 07d4ba6cdac72e502f12dc8d554ac1134a710dde  # Move this to an environment variable
+
+
+application:
+  github.graphql.url: "https://api.github.com/graphql"

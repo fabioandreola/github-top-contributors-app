@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Fabio Andreola</title>
+    <link href='css/app.css' rel='stylesheet'>
+
+</head>
+
+<body>
+<div id="app">
+    <div class="container">
+        <div class="header">
+            <h1>Github Top Contributors - <a href="swagger-ui.html" target="_blank">(API)</a></h1> </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="chat_container">
+                    <div class="contributor-box">
+                        <div class="contributor-box-filter">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    <label>Show
+                                        <select name="datatable_length" class="form-control input-sm" v-model="max_contributors_picked">
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                            <option value="150">150</option>
+                                        </select>
+                                        users</label>
+                                    <span class="filter-search-box text-right float-right">
+                            <label>Location:<input type="search" class="form-control input-sm" placeholder="" v-model="location"
+                                                   v-on:keyup.13="findContributors()"></label>
+                      </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="github-users">
+                            <ul>
+                                <li v-for="user in users">
+                                    <a v-bind:href="user.url" target="_blank">
+                                        <div class="message-avatar">
+                                            <img v-bind:src="user.avatarUrl" alt="."/>
+                                        </div>
+                                        <div class="message-body">
+                                            <div class="message-body-heading">
+                                                <h5>{{user.username}}</h5>
+                                                <span>{{user.publicRepositoryCount}} repositories</span>
+                                            </div>
+                                            <p></p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script src="js/main.js"></script>
+
+</body>
+
+</html>

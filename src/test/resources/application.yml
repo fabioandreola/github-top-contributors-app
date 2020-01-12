@@ -1,0 +1,2 @@
+application:
+  github.graphql.url: http://localhost:${wiremock.server.port}

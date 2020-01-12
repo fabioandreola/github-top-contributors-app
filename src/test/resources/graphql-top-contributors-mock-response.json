@@ -1,0 +1,57 @@
+{
+  "data": {
+    "search": {
+      "userCount": 14530,
+      "edges": [
+        {
+          "node": {
+            "login": "nilportugues",
+            "location": "Barcelona, Catalunya",
+            "url": "http://url...",
+            "avatarUrl": "http://avatarUrl...",
+            "repositories": {
+              "totalCount": 1003
+            }
+          }
+        },
+        {
+          "node": {
+            "login": "leobcn",
+            "location": "Barcelona",
+            "url": "http://url...",
+            "avatarUrl": "http://avatarUrl...",
+            "repositories": {
+              "totalCount": 808
+            }
+          }
+        },
+        {
+          "node": {
+            "login": "albodelu",
+            "location": "Barcelona, Catalonia, Spain",
+            "url": "http://url...",
+            "avatarUrl": "http://avatarUrl...",
+            "repositories": {
+              "totalCount": 637
+            }
+          }
+        },
+        {
+          "node": {
+            "login": "lablibertario",
+            "location": "Barcelona",
+            "url": "http://url...",
+            "avatarUrl": "http://avatarUrl...",
+            "repositories": {
+              "totalCount": 460
+            }
+          }
+        }
+      ],
+      "pageInfo": {
+        "hasNextPage": true,
+        "endCursor": "Y3Vyc29yOjE1"
+      }
+    }
+  }
+}
