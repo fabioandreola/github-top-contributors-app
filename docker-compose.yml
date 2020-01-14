@@ -5,5 +5,7 @@ services:
 
   github-top-contributors-app:
     build: .
+    env_file: 
+      - github-top-contributors-app-test.env
     ports:
       - 8080:8080

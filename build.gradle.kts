@@ -62,3 +62,8 @@ tasks.withType<KotlinCompile> {
         jvmTarget = "1.8"
     }
 }
+
+tasks.bootRun {
+    val properties: Map<String, Any> = System.getProperties().toMap() as Map<String, Any>
+    systemProperties = properties
+}

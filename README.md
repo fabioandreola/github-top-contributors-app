@@ -52,7 +52,7 @@ After the application is built there are two easy ways to run it from the root d
 ###### If you only have java 11+
 
 ```sh
-./gradlew bootRun
+./gradlew -DCLIENT_ID=530e530b1ebd1806e17b -DCLIENT_SECRET=07d4ba6cdac72e502f12dc8d554ac1134a710dde bootRun
 ```
 
 ###### Too much work?

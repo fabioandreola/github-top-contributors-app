@@ -8,7 +8,7 @@ var app = new Vue({
     methods: {
         findContributors() {
             this.users = []
-            fetch("http://localhost:8080/api/top-contributors?location=" + this.location + "&maxResults=" + this.max_contributors_picked)
+            fetch("/api/top-contributors?location=" + this.location + "&maxResults=" + this.max_contributors_picked)
                 .then(response => response.json())
                 .then((data) => {
                     if (data.isError) {
