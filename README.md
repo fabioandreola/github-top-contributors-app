@@ -9,8 +9,8 @@ To check the exposed API take a look at the **_Open API_** documentation either 
 
 You can check a live demo of the application here:
 
-* [Github top contributors](http://165.22.69.217:8080/)
-* [Open API documentation](http://165.22.69.217:8080/swagger-ui.html)
+* [Github top contributors](http://githubtopcontributors.fabioandreola.com/)
+* [Open API documentation](http://githubtopcontributors.fabioandreola.com/swagger-ui.html)
 
 
 <img src="https://github.com/fabioandreola/github-top-contributors-app/blob/5ab17b994e18d574282c70c2b583e911c2de04c6/doc/images/app_screenshot.png" width="800"/>
@@ -57,7 +57,7 @@ After the application is built there are two easy ways to run it from the root d
 
 ###### Too much work?
 
-Just check the application running here: [Github top contributors](http://165.22.69.217:8080/)
+Just check the application running here: [Github top contributors](http://githubtopcontributors.fabioandreola.com/)
 
 ## Performance considerations
 

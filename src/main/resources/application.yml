@@ -10,3 +10,5 @@ spring:
 
 application:
   github.graphql.url: "https://api.github.com/graphql"
+server:
+  forward-headers-strategy: framework
