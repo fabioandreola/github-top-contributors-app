@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
     kotlin("jvm") version "1.3.61"
     kotlin("plugin.spring") version "1.3.61"
+    groovy
 }
 
 group = "com.fabioandreola.github.topcontributors"
@@ -16,8 +17,6 @@ repositories {
 
 extra["springCloudVersion"] = "Hoxton.SR1"
 extra["spockVersion"] = "1.3-groovy-2.5"
-
-apply(plugin = "groovy")
 
 dependencies {
     implementation(project(":github-top-contributors-api"))
@@ -50,10 +49,6 @@ dependencyManagement {
     imports {
         mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
     }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile> {
