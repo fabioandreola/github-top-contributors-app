@@ -17,9 +17,9 @@ docker build . -t fabioandreola/github-app:latest
 failIfError
 
 echo "Tagging image"
-docker tag fabioandreola/github-app fabioandreola/personal:github-top-contributors
+docker tag fabioandreola/github-app fabioandreola/github-top-contributors:latest
 failIfError
 
 echo "Pushing to repository"
-docker push fabioandreola/personal
+docker push fabioandreola/github-top-contributors
 failIfError

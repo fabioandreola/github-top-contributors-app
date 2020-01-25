@@ -3,14 +3,17 @@ var app = new Vue({
     data: {
         location: '',
         max_contributors_picked: '50',
-        users: []
+        users: [],
+        loading: false
     },
     methods: {
         findContributors() {
             this.users = []
+            this.loading = true
             fetch("/api/top-contributors?location=" + this.location + "&maxResults=" + this.max_contributors_picked)
                 .then(response => response.json())
                 .then((data) => {
+                    this.loading = false
                     if (data.isError) {
                         alert(data.errorMessage)
                     } else {
