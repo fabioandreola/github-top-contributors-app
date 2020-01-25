@@ -13,7 +13,7 @@ You can check a live demo of the application here:
 * [Open API documentation](http://githubtopcontributors.fabioandreola.com/swagger-ui.html)
 
 
-<img src="https://github.com/fabioandreola/github-top-contributors-app/blob/5ab17b994e18d574282c70c2b583e911c2de04c6/doc/images/app_screenshot.png" width="800"/>
+<img src="https://github.com/fabioandreola/github-top-contributors-app/blob/668e7ae6aef40c1b03dcfe1232f4a94549cda6f1/doc/images/app_screenshot.png" width="800"/>
 
 ## How to run the application
 
