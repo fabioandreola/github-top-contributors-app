@@ -19,10 +19,9 @@ You can check a live demo of the application here:
 
 ##### Requirements 
 
-* Java 11+ installed.
 * Git.
 * A Github account if you want to use the app.
-* Docker (optional).
+* Docker and Docker Compose.
 
 ##### First, let's build the app.
 
@@ -41,19 +40,17 @@ git clone https://github.com/fabioandreola/github-top-contributors-app.git
 
 ##### Run the app.
 
-After the application is built there are two easy ways to run it from the root directory of the application.
-
-###### If you have docker
+After the application is built bootstrap the app using docker-compose.
 
 ```sh
 ./docker-compose up
 ```
 
-###### If you only have java 11+
+##### Making sure everything is working correctly 
 
-```sh
-./gradlew -DCLIENT_ID=530e530b1ebd1806e17b -DCLIENT_SECRET=07d4ba6cdac72e502f12dc8d554ac1134a710dde bootRun
-```
+`docker-compose.yml` creates 2 containers, one for the UI exposing the app at port 80 and another one for the backend that is not exposed externally. 
+
+To make sure the app is working correctly open you browser and head to http://localhost. If it is your first time running the app you will be redirected to the login page.
 
 ###### Too much work?
 
@@ -89,7 +86,7 @@ Currently, there is no error handling when the Github API fails or the limit exc
 
 ###### Tests
 
-Tests are quite basic at the moment and adding blackbox tests would be nice to have. 
+Tests are quite basic at the moment and adding blackbox tests would be a nice to have. 
 
 ###### Demo UI
 

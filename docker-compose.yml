@@ -3,9 +3,16 @@ version: "3"
 
 services:
 
+  ui:
+    build: ui/.
+    ports:
+      - 80:80
+    links: 
+      - github-top-contributors-app:github.topcontributors.api
+
   github-top-contributors-app:
     build: .
     env_file: 
       - github-top-contributors-app-test.env
     ports:
-      - 8080:8080
+      - 8080
