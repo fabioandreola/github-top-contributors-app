@@ -1,3 +1,5 @@
+![Java CI](https://github.com/fabioandreola/github-top-contributors-app/workflows/Java%20CI/badge.svg?branch=master)
+
 # Github Top Contributors App
 Small demo app that uses the Github GraphQL API and retrieves a list of the top contributors by location.
 
