@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Sample app that lists GitHub top contributors by location">
+    <meta name="author" content="Fabio Andreola">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Github Top Contributors</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/offcanvas.css" rel="stylesheet">
+    <link href='css/app.css' rel='stylesheet'>
+</head>
+
+<body class="bg-light">
+
+<div id="app">
+
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Github Top Contributors by Location</a>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbar">
+            <div class="form-inline my-2 my-lg-0 navbar-nav mr-auto">
+                <select name="datatable_length" class="" v-model="max_contributors_picked" id="max_contributors">
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="150">150</option>
+                </select>
+                <label class="text-white-50 pl-2" for="max_contributors">Max Results</label>
+                <a class="pl-lg-5" href="/swagger-ui.html" target="_blank">API</a>
+            </div>
+            <div class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="location" aria-label="Search" v-model="location"
+                       v-on:keyup.13="findContributors()">
+                <button class="btn btn-outline-success my-2 my-sm-0" v-on:click="findContributors()">Search</button>
+            </div>
+        </div>
+    </nav>
+
+    <div v-if="loading" class="loader"></div>
+    <main role="main" class="container">
+
+        <div>
+            <github-users v-bind:users="users"></github-users>
+        </div>
+    </main>
+
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="query-slim.min.js"><\/script>')</script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/offcanvas.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="js/github-users-component.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
