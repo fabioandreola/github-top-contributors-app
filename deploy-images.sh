@@ -8,6 +8,8 @@ failIfError() {
     fi
 }
 
+# Build and deploy the backend
+
 echo "Building project"
 ./gradlew clean build
 failIfError
@@ -23,3 +25,18 @@ failIfError
 echo "Pushing to repository"
 docker push fabioandreola/github-top-contributors
 failIfError
+
+
+# Build an deploy UI
+echo "Building docker image"
+docker build $PWD/ui -t fabioandreola/github-app-ui:latest
+failIfError
+
+echo "Tagging image"
+docker tag fabioandreola/github-app-ui fabioandreola/github-top-contributors-ui:latest
+failIfError
+
+echo "Pushing to repository"
+docker push fabioandreola/github-top-contributors-ui
+failIfError
+

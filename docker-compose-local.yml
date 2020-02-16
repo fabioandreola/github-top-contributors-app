@@ -4,15 +4,15 @@ version: "3"
 services:
 
   ui:
-    image: fabioandreola/github-top-contributors-ui
+    build: ui/.
     ports:
       - 80:80
-    links: 
+    links:
       - github-top-contributors-app:github.topcontributors.api
 
   github-top-contributors-app:
-    image: fabioandreola/github-top-contributors
-    env_file: 
+    build: .
+    env_file:
       - github-top-contributors-app-test.env
     ports:
       - 8080
