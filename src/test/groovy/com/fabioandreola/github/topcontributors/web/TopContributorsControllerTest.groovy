@@ -1,10 +1,14 @@
 package com.fabioandreola.github.topcontributors.web
 
-
+import com.fabioandreola.github.topcontributors.configuration.RedisConfiguration
+import com.fabioandreola.github.topcontributors.gateway.github.GraphQlGithubApi
 import com.fabioandreola.github.topcontributors.service.GithubService
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+import org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest
+import org.springframework.context.annotation.Import
 import org.springframework.security.test.context.support.WithAnonymousUser
 import org.springframework.security.test.context.support.WithMockUser
 import org.springframework.test.web.reactive.server.WebTestClient
@@ -15,6 +19,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON
 
 @WebFluxTest(TopContributorsController)
 @WithMockUser
+@Import([RedisReactiveAutoConfiguration, RedisConfiguration, RedisAutoConfiguration])
 class TopContributorsControllerTest extends Specification {
 
     private static final String TOP_CONTRIBUTORS_URI = "/api/top-contributors"

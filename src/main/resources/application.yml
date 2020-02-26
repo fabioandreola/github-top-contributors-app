@@ -1,4 +1,7 @@
 spring:
+  session:
+    store-type: redis
+    timeout: 30M
   security:
     oauth2:
       client:
@@ -6,9 +9,19 @@ spring:
           github:
             client-id: ${CLIENT_ID}
             client-secret: ${CLIENT_SECRET}
-
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:#{null}}
+    ssl: true
+  application:
+    name: github-top-contributors
 
 application:
   github.graphql.url: "https://api.github.com/graphql"
 server:
   forward-headers-strategy: framework
+
+logging:
+  level:
+    root: info

@@ -1,5 +1,6 @@
 package com.fabioandreola.github.topcontributors
 
+import com.fabioandreola.github.topcontributors.configuration.RedisConfiguration
 import com.fabioandreola.github.topcontributors.gateway.github.GraphQlGithubApi
 import com.fabioandreola.github.topcontributors.service.GithubService
 import com.fabioandreola.github.topcontributors.service.SecurityService
@@ -8,6 +9,8 @@ import com.github.tomakehurst.wiremock.client.WireMock
 import org.spockframework.spring.SpringBean
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration
+import org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock
 import org.springframework.context.annotation.Import
@@ -24,10 +27,11 @@ import static com.github.tomakehurst.wiremock.client.WireMock.postRequestedFor
 import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo
 import static org.springframework.http.MediaType.APPLICATION_JSON
 
+
 @WebFluxTest(TopContributorsController)
 @AutoConfigureWireMock(port = 0)
 @ActiveProfiles("test")
-@Import([GraphQlGithubApi, GithubService])
+@Import([GraphQlGithubApi, GithubService, RedisReactiveAutoConfiguration, RedisConfiguration, RedisAutoConfiguration])
 @WithMockUser
 class TopContributorsIntegrationTest extends Specification {
 

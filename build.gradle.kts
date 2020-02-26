@@ -31,7 +31,9 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation("org.springframework.cloud:spring-cloud-starter-oauth2")
     implementation("org.springdoc:springdoc-openapi-webflux-ui:1.2.26")
-
+    implementation("org.springframework.boot:spring-boot-starter-data-redis-reactive")
+    implementation("org.springframework.session:spring-session-core")
+    implementation("org.springframework.session:spring-session-data-redis")
 
 
     testImplementation("org.springframework.boot:spring-boot-starter-test") {

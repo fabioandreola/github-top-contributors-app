@@ -8,11 +8,18 @@ services:
     ports:
       - 80:80
     links:
-      - github-top-contributors-app:github.topcontributors.api
+      - github-top-contributors-app:api.githubtopcontributors
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
 
   github-top-contributors-app:
     build: .
     env_file:
       - github-top-contributors-app-test.env
     ports:
-      - 8080
+      - 8080:8080
+    links:
+      - redis:redis.server
